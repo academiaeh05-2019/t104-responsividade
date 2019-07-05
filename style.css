@@ -1,0 +1,126 @@
+body{
+    margin:0;
+    display: grid;
+    grid-template-areas:'nav nav nav nav'
+                        'header section segunda div'
+                        'footer footer footer footer';
+    grid-template-rows: 20vh 70vh 40vh;
+    font-family: 'Roboto Mono', monospace;
+    }
+
+header{
+    grid-area: header;
+    background-color:#8BADD9;
+}
+
+nav{
+    grid-area: nav;
+    background-color: #01403A;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header, section, .segunda, div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.rodape img{
+    width: 100px;
+    height: 100px;
+}
+
+.rodape{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: stretch;
+    width: 50%;
+}
+
+nav a{
+    color: #B0C1D9;
+    text-decoration: none;
+    font-size: 16pt;
+}
+
+nav a:hover{
+    color: blueviolet;  
+    text-decoration-line: underline;
+    transition: 2s;
+}
+
+img{
+    width: 200px;
+    height: 200px;
+    border-radius: 10%;
+    border: 4px double white;
+    margin: 10px;
+}   
+section{
+    grid-area: section;
+    background-color: #6295D9;
+}
+
+.segunda{
+    grid-area: segunda;
+    background-color: #024959;
+}
+
+.amigo{
+    grid-area: div; 
+    background-color: #B0C1D9;
+}
+footer{
+    grid-area:footer;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 1;
+    align-items: center;
+    color: white;
+}
+@media (max-width: 768px){
+    body{
+        grid-template-areas: 'nav nav nav nav'
+                            'header header section section'
+                            'segunda segunda div div'
+                            'footer footer footer footer';
+        grid-template-rows: 20vh 70vh 70vh 60vh;
+    }
+
+    nav a{
+        display: none;
+    }
+}
+
+@media (max-width: 425px){
+    body{
+        grid-template-areas: 'nav nav nav nav'
+                            'header header header header'
+                            'section section section section'
+                            'segunda segunda segunda segunda'
+                            'div div div div'
+                            'footer footer footer footer';
+        grid-template-rows: 20vh 70vh 70vh 70vh 70vh 60vh;
+    }
+
+    nav a{
+        display: none;
+    }
+
+    footer h2{
+        text-align: center;
+    }
+
+    .rodape{
+        flex-direction: column;
+        width: 80%;
+    }
+}
